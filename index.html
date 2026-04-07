@@ -447,6 +447,101 @@
     @media (max-width: 480px) {
       .skills-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── PROJECTS ── */
+.projects {
+  padding: 6rem 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.8rem;
+  transition: 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.project-card h3 {
+  font-family: var(--font-head);
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 6rem 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.contact-info p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.contact-item strong {
+  color: var(--accent);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  width: fit-content;
+}
   </style>
 </head>
 <body>
@@ -468,7 +563,7 @@
       <span class="hero-label">Available for Internships</span>
       <h1 class="hero-name">Hi, I'm<br><span>Pradyun.</span></h1>
       <p class="hero-tagline">
-        B.Tech student at VIT · passionate about data, algorithms, and building things that matter.
+        B.Tech student at VIT - passionate about coding, learning and building solutions.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -478,7 +573,7 @@
 
     <div class="hero-photo-wrap">
       <div class="photo-frame">
-        <img src="photo.jpg" alt="Pradyun" />
+        <img src="assets/photo.jpeg" alt="Pradyun" />
         <div class="photo-badge">
           <strong>VIT</strong>
           B.Tech · CSE
@@ -498,8 +593,7 @@
       <div class="about-text">
         <p>
           I'm Pradyun, a second-year B.Tech student at Vellore Institute of Technology,
-          diving deep into Computer Science with a focus on data structures, algorithms,
-          and systems programming.
+          diving deep into Computer Science with a specialization in Data Science.
         </p>
         <p>
           I enjoy breaking down complex problems — whether that's tracing a KMP failure
@@ -507,18 +601,17 @@
           to structure a web page. I learn best by doing.
         </p>
         <p>
-          Outside academics, I follow Formula 1 closely, think a lot about historical
-          systems and strategy, and occasionally obsess over getting things just right.
+          Outside academics, I follow Formula 1 closely, love learning about history along with eating food and driving.
         </p>
       </div>
 
       <div class="about-stats">
         <div class="stat-card">
-          <div class="num">4+</div>
+          <div class="num">6+</div>
           <div class="label">Courses Active</div>
         </div>
         <div class="stat-card">
-          <div class="num">10+</div>
+          <div class="num">2</div>
           <div class="label">Projects Done</div>
         </div>
         <div class="stat-card">
@@ -596,6 +689,67 @@
 
     </div>
   </section>
+  <!-- PROJECTS -->
+<section class="projects" id="projects">
+  <p class="section-label">What I've Built</p>
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>
+        A personal portfolio website built using HTML and CSS to showcase my skills and projects. Tells my story and journey.
+      </p>
+      <span class="project-tech">HTML · CSS</span>
+    </div>
+
+    <div class="project-card">
+      <h3>FFCS-Master</h3>
+      <p>
+        A backend web application built using Flask for handling user input and data processing. Provides a VITian's dream timetable.
+      </p>
+      <span class="project-tech">Flask · Python</span>
+    </div>
+
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <p class="section-label">Get In Touch</p>
+  <h2 class="section-title">Contact</h2>
+
+  <div class="contact-grid">
+
+    <!-- LEFT: INFO -->
+    <div class="contact-info">
+      <p>
+        Feel free to reach out for collaborations, internships, or just a conversation.
+      </p>
+
+      <div class="contact-item">
+        <strong>Email:</strong> pradyun.shashi2024@vitstudent.ac.in
+      </div>
+
+      <div class="contact-item">
+        <strong>GitHub:</strong> github.com/PradyunShashi
+      </div>
+
+      <div class="contact-item">
+        <strong>Mobile No:</strong> 938 502 3746
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+  </div>
+</section>
 
 </body>
 </html>
