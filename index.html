@@ -331,6 +331,94 @@
       50%       { transform: translateX(-50%) translateY(6px); }
     }
 
+    /* ── SKILLS ── */
+    .skills {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .skills::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(71,200,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(232,255,71,0.03), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .skill-card:hover::after { opacity: 1; }
+
+    .skill-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .skill-info { flex: 1; }
+
+    .skill-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-type {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .skill-bar-wrap {
+      height: 3px;
+      background: var(--border);
+      border-radius: 999px;
+      margin-top: 0.8rem;
+      overflow: hidden;
+    }
+
+    .skill-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -351,6 +439,13 @@
       .about { padding: 4rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-stats { grid-template-columns: 1fr 1fr; }
+
+      .skills { padding: 4rem 1.5rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -435,6 +530,70 @@
           <div class="label">Vellore Campus</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <p class="section-label">What I Work With</p>
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-info">
+          <div class="skill-name">HTML</div>
+          <div class="skill-type">Markup · Web</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-info">
+          <div class="skill-name">CSS</div>
+          <div class="skill-type">Styling · Web</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-info">
+          <div class="skill-name">Python</div>
+          <div class="skill-type">Language · General</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🔥</div>
+        <div class="skill-info">
+          <div class="skill-name">Flask</div>
+          <div class="skill-type">Framework · Backend</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-info">
+          <div class="skill-name">C++</div>
+          <div class="skill-type">Language · Systems</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <div class="skill-info">
+          <div class="skill-name">Java</div>
+          <div class="skill-type">Language · OOP</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
